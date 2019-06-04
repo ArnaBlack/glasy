@@ -537,14 +537,20 @@ input[type='radio'].visually-hidden {
 
 /*features*/
 .features {
+  padding: 20px 25px;
+  margin-bottom: 40px;
+
   color: #323232;
 
   background-color: #ede2c4;
   background-image: url("../img/service-img/waffle-pattern.png");
   background-repeat: repeat;
+  border-radius: 25px;
 }
 
-.mail-title {
+.main-title {
+  margin: 0;
+
   font-size: 24px;
   font-weight: 500;
   line-height: 30px;
@@ -553,16 +559,83 @@ input[type='radio'].visually-hidden {
 .feature-list {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   list-style: none;
+}
+
+.feature-item {
+  width: 532px;
+  padding-left: 56px;
+  padding-top: 16px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.feature-item::before {
+  content: "";
+  width: 49px;
+  height: 49px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.feature-delivery::before {
+  background-image: url("../img/service-img/thermometer.svg");
+}
+
+.feature-tech::before {
+  background-image: url("../img/service-img/icecream.svg");
+}
+
+.feature-farm::before {
+  background-image: url("../img/service-img/cow.svg");
+}
+
+.feature-raw::before {
+  background-image: url("../img/service-img/leaf.svg");
 }
 /*news*/
 .news {
   color: #323232;
+  display: flex;
+  justify-content: space-between;
+
 }
 
-.blog p {
+.news-item {
+  padding: 25px 20px;
+  padding-bottom: 40px;
+  max-width: 560px;
+  width: 100%;
+
+  background-color: #fff;
+  border-radius: 30px;
+}
+
+.item-blog {
+  padding-right: 259px;
+
+  background-image: url("../img/service-img/bg-strawberry.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-blog p {
+  margin: 0;
+  margin-bottom: 10px;
+
   font-weight: 500;
+}
+
+.blog-title {
+  margin: 0;
 }
 
 .blog-title a {
