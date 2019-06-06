@@ -568,13 +568,6 @@ input[type='radio'].visually-hidden {
 }
 
 /*catalog*/
-.catalog {
-  margin-bottom: 30px;
-}
-
-.inner-page .page-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
 .catalog-list {
   margin: 0;
   padding: 0;
@@ -592,10 +585,10 @@ input[type='radio'].visually-hidden {
 }
 
 .product-wrap {
-  position: relative;
-  z-index: 2;
-
+  display: flex;
+  flex-direction: column;
 }
+
 
 .hover-wrap {
   min-height: 405px;
@@ -605,9 +598,11 @@ input[type='radio'].visually-hidden {
   position: absolute;
   top: -5px;
   left: -12px;
+  z-index: 1;
 
   transition: background-color ease 0.3s, box-shadow ease 0.3s;
 }
+
 .catalog-item:hover {
   overflow: visible;
 }
@@ -616,6 +611,11 @@ input[type='radio'].visually-hidden {
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
+}
+
+.catalog-item:hover .product-wrap {
+  position: relative;
+  z-index: 2;
 }
 
 .btn-hidden {
@@ -648,7 +648,7 @@ input[type='radio'].visually-hidden {
 
 }
 
-.catalog-item::before {
+.catalog-hits .catalog-item::before {
   content: "";
 
   width: 61px;
@@ -666,6 +666,7 @@ input[type='radio'].visually-hidden {
 .product-title {
   display: inline-block;
   margin: 0;
+  margin-bottom: 30px;
 
   font-size: 16px;
   font-weight: 500;
@@ -1033,6 +1034,10 @@ input[type='radio'].visually-hidden {
   display: flex;
   align-items: bottom;
   padding: 36px 0;
+}
+
+.inner-page .page-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-social {
