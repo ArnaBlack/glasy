@@ -31,74 +31,92 @@
           </ul>
         </nav>
         <div class="user-menu">
-              <div class="user-menu-item">
-                <a class="item-search" href="search.html"><span class="visually-hidden">поиск</span></a>
-                <section class="modal modal-search">
-                    <h2 class="visually-hidden">поиск на сайте</h2>
-                    <form class="search-form" action="#" method="post">
-                      <label class="visually-hidden" for="search-input">поиск на сайте</label>
-                        <input class="input search-input" id="search-input" type="search" name="search" placeholder="Что ищем?">
-                        <button type="submit"><span class="visually-hidden">найти</span></button>
-                    </form>
-                  </section>
-              </div>
-              <div class="user-menu-item">
-                <a class="menu-item item-login" href="login.html">Вход</a>
-                <section class="modal modal-login">
-                    <h2 class="visually-hidden" >Личный кабинет</h2>
-                  <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
-                    <p>
-                      <label class="visually-hidden" for="user-login">Электронная почта</label>
-                      <input class="input login-icon-user" id="user-login" type="email" name="login" placeholder="Электронная почта">
-                    </p>
-                    <p>
-                      <label class="visually-hidden" for="user-password">Пароль</label>
-                      <input class="input login-icon-password" id="user-password" type="password" name="password" placeholder="пароль">
-                    </p>
-                    <button class="btn">Войти</button>
-                    <p>
-                      <a class="login-link" href="#">забыли пароль?</a>
-                      <a class="login-link" href="#">новая регистрация</a>
-                    </p>
-                  </form>
-                </section>
-              </div>
-              <div class="user-menu-item">
-                <a class="menu-item item-cart cart-fill" href="cart.html">2 товара</a>
-              </div>
+          <div class="user-menu-item">
+            <a class="menu-item item-search" href="search.html"><span class="visually-hidden">поиск</span></a>
+            <section class="modal modal-search">
+                <h2 class="visually-hidden">поиск на сайте</h2>
+                <form class="search-form" action="#" method="post">
+                  <label class="visually-hidden" for="search-input">поиск на сайте</label>
+                  <input class="input search-input" id="search-input" type="search" name="search" placeholder="Что ищем?">
+                </form>
+              </section>
+          </div>
+          <div class="user-menu-item">
+            <a class="menu-item item-login" href="login.html">Вход</a>
+              <section class="modal modal-login">
+                <h2 class="visually-hidden" >Личный кабинет</h2>
+                <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+                  <p>
+                    <label class="visually-hidden" for="user-login">Электронная почта</label>
+                    <input class="input login-icon-user" id="user-login" type="email" name="login" placeholder="Электронная почта">
+                  </p>
+                  <p>
+                    <label class="visually-hidden" for="user-password">Пароль</label>
+                    <input class="input login-icon-password" id="user-password" type="password" name="password" placeholder="пароль">
+                  </p>
+                  <button class="btn">Войти</button>
+                  <p>
+                    <a class="login-link" href="#">забыли пароль?</a>
+                    <a class="login-link" href="#">новая регистрация</a>
+                  </p>
+                </form>
+              </section>
+          </div>
+          <div class="user-menu-item">
+              <a class="menu-item item-cart cart-fill" href="cart.html">2 товара</a>
+          </div>
         </div>
       <p class="header-contacts">С 10 до 20, ежедневно<a class="header-phone" href="tel:+78124502525">8 812 450-25-25</a></p>
     </header>
-    <main>
+    <main class="container">
         <ul class="breadcrumbs">
             <li><a href="index.html">Главная</a></li>
             <li><a href="#">Каталог</a></li>
-            <li class="breadcrumbs-current"><a>Сливочное</a></li>
+            <li class="breadcrumbs-current">Сливочное</li>
         </ul>
         <h1 class="main-title">Cливочное мороженое</h1>
         <!--filters-->
         <section class="filters">
             <h2 class="visually-hidden">Фильтр товаров</h2>
             <form class="filter" method="get" action="https://echo.htmlacademy.ru">
-                <fieldset>
-                    <label class="sort-title" for="filter-sort">Cортировка:</label>
-                    <select name="filter-sort" id="filter-sort">
+                <fieldset class="filter-group group-sort">
+                    <label class="filter-group-title" for="filter-sort">Cортировка:</label>
+                    <p class="filter-field">
+                      <select name="filter-sort" id="filter-sort">
                         <option value="1">по популятности</option>
                         <option value="2">сначала недорогие</option>
                         <option value="3">сначала дорогие</option>
-                        <option value="4">по жирности</option>
-                    </select>
-                </fieldset>
-                <fieldset>
-                    <legend>Цена:</legend>
-                    <p>
-                        <span>100 руб.</span> - <span>500 руб.</span>
-                        <input type="range" name="filter-price" id="filter-price" min="0" max="1000" step="10">
+                          <option value="4">по жирности</option>
+                      </select>
                     </p>
                 </fieldset>
-                <fieldset>
+                <fieldset class="filter-group group-price">
+                    <div>
+                      <div class="filter-group-title">
+                        <span>Цена:</span>
+                        <div class="price-controls">
+                          <label class="min-price">
+                              <input type="text" name="min-price" value="100">
+                              руб. -
+                          </label>
+                          <label class="max-price">
+                              <input type="text" name="min-price" value=500>
+                              руб.
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-field range-controls">
+                      <div class="scale">
+                        <div class="bar"></div>
+                      </div>
+                      <div class="range-toggle range-toggle-min"></div>
+                      <div class="range-toggle range-toggle-max"></div>
+                    </div>
+                </fieldset>
+                <fieldset class="filter-group group-fat">
                     <legend>Жирность:</legend>
-                    <ul>
+                    <ul class="filter-field">
                         <li class="filter-option">
                             <input class="visually-hidden filter-input filter-input-radio"  type="radio" name="fat-content" id="filter-fat-free" value="fat-free">
                             <label for="filter-fat-free">0 %</label>
@@ -117,15 +135,15 @@
                         </li>
                     </ul>
                 </fieldset>
-                <fieldset>
+                <fieldset class="filter-group group-filler">
                     <legend>Наполнители:</legend>
-                    <ul>
+                    <ul class="filter-field">
                         <li class="filter-option">
-                            <input class="visually-hidden filter-input filter-input-checkbox checked"  type="checkbox" name="chocolate" id="filter-chocolate">
+                            <input class="visually-hidden filter-input filter-input-checkbox checked"  type="checkbox" name="chocolate" id="filter-chocolate" checked>
                             <label for="filter-chocolate">шоколадные</label>
                         </li>
                         <li class="filter-option">
-                            <input class="visually-hidden filter-input filter-input-checkbox checked"  type="checkbox" name="sugar powder" id="filter-sugar-powder">
+                            <input class="visually-hidden filter-input filter-input-checkbox checked"  type="checkbox" name="sugar powder" id="filter-sugar-powder" checked disabled>
                             <label for="filter-sugar-powder">сахарные присыпки</label>
                         </li>
                         <li class="filter-option">
@@ -141,20 +159,22 @@
                             <label for="filter-jam">джемы</label>
                         </li>
                     </ul>
-                    <button class="btn filer-btn">Применить</button>
                 </fieldset>
+                <button class="filter-btn">Применить</button>
             </form>
         </section>
         <section class="catalog">
             <h2 class="visually-hidden">список сливочного мороженного</h2>
             <ul class="catalog-list">
                 <li class="catalog-item">
-                    <a href="#">
+                    <a class="product-wrap" href="#">
                      <img class="product-preview" src="img/content-img/1.jpg" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
                      <h3 class="product-title">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
                     </a>
                     <p class="product-price">310 &#8381;<span>/кг</span></p>
-                    <a class="btn btn-hidden" href="#">Быстрый просмотр</a>
+                    <div class="hover-wrap">
+                      <a class="btn btn-hidden" href="#">Быстрый просмотр</a>
+                    </div>
                 </li>
                 <li class="catalog-item">
                     <a href="#">
@@ -245,13 +265,17 @@
                 <a class="btn btn-hidden" href="#">Быстрый просмотр</a>
                 </li>
             </ul>
-            <ul class="pagination-list">
+            <div class="pagination-wrap">
+              <a class="pagination-controls pagination-prev" href="#" aria-label="назад"></a>
+              <ul class="pagination-list">
                 <li class="pagination-item pagination-item-current"><a href="#">1</a></li>
                 <li class="pagination-item"><a href="#">2</a></li>
                 <li class="pagination-item"><a href="#">3</a></li>
                 <li class="pagination-item"><a href="#">4</a></li>
                 <li class="pagination-item"><a href="#">5</a></li>
-            </ul>
+              </ul>
+              <a class="pagination-controls pagination-next" href="#" aria-label="вперед"></a>
+            </div>
         </section>
     </main>
 
