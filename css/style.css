@@ -868,12 +868,14 @@ input[type='radio'].visually-hidden {
 }
 
 .contacts .container {
-  padding: 62px 0;
+  padding: 55px 0;
   position: relative;
   z-index: 4;
 }
 
 .contacts-map {
+  width: 100%;
+  height: 430px;
   position: absolute;
   top: 0;
   left: 0;
@@ -1349,12 +1351,16 @@ input[type='radio'].visually-hidden {
   border: none;
 }
 
-.range-controls {
-  position: relative;
+.group-price .filter-field {
   padding: 17px 22px;
 }
 
+.range-controls {
+  position: relative;
+}
+
 .range-toggle {
+  box-sizing: content-box;
   position: absolute;
   top: -9px;
 
@@ -1369,7 +1375,7 @@ input[type='radio'].visually-hidden {
 }
 
 .range-toggle:hover {
-  background: #1c4f80;
+  border-width: 10px;
 }
 
 .range-toggle-min {
