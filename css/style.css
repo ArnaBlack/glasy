@@ -20,7 +20,7 @@ img {
 }
 
 body {
-  /*width: 1200px;*/
+  min-width: 1200px;
   margin: 0 auto;
 
   font-family: 'Roboto', 'Arial', sans-serif;
@@ -863,28 +863,52 @@ input[type='radio'].visually-hidden {
   line-height: 20px;
   color: #323232;
   position: relative;
-
-  background-color: #f7f1d9;
 }
 
 .contacts .container {
-  padding: 55px 0;
-  position: relative;
-  z-index: 4;
+  padding: 0 27px;
+  position: absolute;
+  z-index: 3;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .contacts-map {
   width: 100%;
   height: 430px;
+}
+
+.contacts-map .map {
+  position: relative;
+  z-index: 2;
+}
+#map {
+  width: 100%;
+  height: 430px;
+  padding: 0;
+  margin: 0;
+}
+
+.map-static-wrap {
+  width: 1200px;
+  margin: 0 auto;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1;
+
+  background-color: #f7f1d9;
 }
-.map {
-  width: 100%;
+
+.map-static-wrap img {
+  width: 1200px;
   height: 430px;
+  display: block;
 }
 
 .map-pin {

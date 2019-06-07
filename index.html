@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <title>GllasyShop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"Глейси"-Главная</title>
   <link rel="stylesheet" href="css/normalize.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="img/service-img/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header class="main-header container">
@@ -69,28 +71,10 @@
  <main>
    <div class="container">
     <!--promo-->
-    <!--<section class="promo">
-      <h2 class="visually-hidden">вкусные предложения</h2>
-      <div class="slide-wrapper">
-          <img src="img/content-img/slide-1.png" width="1065" height="859" alt="Крем-брюле и пломбир с малиновым джемом">
-          <h3 class="slider-title">Крем-брюле и пломбир с малиновым джемом</h3>
-      </div>
+    <section class="slider">
+      <h2 class="visually-hidden">Вкусные предложения</h2>
 
-        <div class="slide-wrapper">
-            <img src="img/content-img/slide-2.png" width="1065" height="859" alt="Шоколадный пломбир и лимонный сорбет ">
-            <h3 class="slider-title">Шоколадный пломбир и лимонный сорбет</h3>
-        </div>
-      <div class="slide-wrapper">
-          <img src="img/content-img/slide-3.png" width="1065" height="859" alt="Пломбир с помадкой и клубничный щербет">
-          <h3 class="slider-title">Пломбир с помадкой и клубничный щербет</h3>
-      </div>
-      <ul class="slider-control">
-        <li><button>первый слайд</button></li>
-        <li><button>второй слайд</button></li>
-        <li><button>третий слайд</button></li>
-      </ul>
-      <a class="btn" href="#">Давайте оба!</a>
-    </section> -->
+    </section>
       <!--special-offers-->
   <section class="special-offer">
       <h2 class="visually-hidden">Специальные предложения</h2>
@@ -201,8 +185,12 @@
   </div>
   <section class="contacts">
     <h2 class="visually-hidden">контакты</h2>
-    <div class="contacts-map" width="100%" height="430" alt="ул. Большая Конюшенная 19/8, Санкт-Петербург">
-      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad2cef436302baa984cb560f1cf2a34610941ad216cbdea54f2d7e29e027ef4a9&amp;width=100%25&amp;height=430&amp;lang=ru_RU&amp;scroll=true"></script>
+    <div class="contacts-map">
+      <div id="map" class="map"></div>
+      <p class="map-static-wrap">
+        <img src="img/service-img/map.jpg"  width="1200" height="430" alt="ул. Большая Конюшенная 19/8, Санкт-Петербург">
+        <span class="map-pin"></span>
+      </p>
     </div>
     <div class="container">
       <div class="contacts-block">
@@ -211,7 +199,6 @@
         <p>Для заказов по телефону:<a class="contacts-phone" href="tel:+78124502525">8 812 450-25-25</a> (с 10 до 20 ежедневно)</p>
         <a class="btn btn-feedback" href="#">Форма обратной связи</a>
       </div>
-      <!-- <span class="map-pin"></span> -->
     </div>
   </section>
  </main>
@@ -288,5 +275,7 @@
   <button class="modal-close" type="button" aria-label="закрыть форму обратной связи">Закрыть</button>
  </section>
  <div class="overlay"></div>
+ <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<99449b4e-3d20-46be-87dc-5f69df448f90>" type="text/javascript"></script>
+ <script src="js/main.js"></script>
 </body>
 </html>
