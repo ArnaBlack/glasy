@@ -14,7 +14,7 @@
 			},
 			{
 				iconLayout: 'default#image', //название
-				iconImageHref: '../img/service-img/pin.png', //источник
+				iconImageHref: 'img/service-img/pin.png', //источник
 				iconImageSize: [218, 142], //размер
 				iconImageOffset: [-40, -140] //координаты смещения
 			});

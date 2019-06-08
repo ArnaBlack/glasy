@@ -73,29 +73,41 @@
     <!--promo-->
     <section class="slider">
       <h2 class="visually-hidden">Вкусные предложения</h2>
+      <input class="visually-hidden" type="radio" id="product-1" name="toggle" checked>
+      <input class="visually-hidden" type="radio" id="product-2" name="toggle">
+      <input class="visually-hidden" type="radio" id="product-3" name="toggle">
       <div class="slider-controls">
-        <button class="btn-slide" aria-label="кнопка переключения слайдера первый слайд"></button>
-        <button class="btn-slide" aria-label="кнопка переключения слайдера второй слайд"></button>
-        <button class="btn-slide" aria-label="кнопка переключения слайдера третий слайд"></button>
+          <label for="product-1">Первый</label>
+          <label for="product-2">Второй</label>
+          <label for="product-3">Третий</label>
       </div>
       <ul class="slider-list">
-          <li class="slider-item slide" id="slide1">
-            <h3 class="slide-title">
-              Крем-брюле и пломбир с малиновым джемом
-            </h3>
-            <a class="btn slide-btn" href="#">Давайте оба!</a>
+          <li class="slider-item slide-1">
+            <img src="img/content-img/slide-1.png" width="1045" height="881" alt="Крем-брюле и пломбир с малиновым джемом">
+            <div class="wrap">
+              <h3 class="slide-title">
+                Крем-брюле и пломбир с малиновым джемом
+              </h3>
+              <a class="btn slide-btn" href="#">Давайте оба!</a>
+            </div>
           </li>
-          <li class="slider-item slide" id="slide2">
-            <h3 class="slide-title">
-              Шоколадный пломбир и лимонный сорбет
-            </h3>
-            <a class="btn slide-btn" href="#">Давайте оба!</a>
+          <li class="slider-item slide-2">
+              <img src="img/content-img/slide-2.png" width="1045" height="881" alt="Шоколадный пломбир и лимонный сорбет">
+            <div class="wrap">
+              <h3 class="slide-title">
+                Шоколадный пломбир и лимонный сорбет
+              </h3>
+              <a class="btn slide-btn" href="#">Давайте оба!</a>
+            </div>
           </li>
-          <li class="slider-item slide" id="slide3">
-            <h3 class="slide-title">
-              Пломбир с помадкой и клубничный щербет
-            </h3>
-            <a class="btn slide-btn" href="#">Давайте оба!</a>
+          <li class="slider-item slide-3">
+              <img src="img/content-img/slide-3.png" width="1045" height="881" alt="Пломбир с помадкой и клубничный щербет">
+            <div class="wrap">
+              <h3 class="slide-title">
+                Пломбир с помадкой и клубничный щербет
+              </h3>
+              <a class="btn slide-btn" href="#">Давайте оба!</a>
+            </div>
           </li>
         </ul>
 
