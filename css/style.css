@@ -543,7 +543,7 @@ input[type='radio'].visually-hidden {
   font-size: 0;
 }
 
-.slider-controls label {
+.btn-slide {
   display: inline-block;
   width: 17px;
   height: 17px;
@@ -556,6 +556,17 @@ input[type='radio'].visually-hidden {
   border: 2px solid #ffffff;
   border-radius: 50%;
   cursor: pointer;
+
+  transition: backdround-color 1s ease;
+}
+
+.btn-slide:hover,
+.btn-slide:focus {
+  background-color: rgba(255, 255,255, 0.7);
+}
+
+.btn-slide-active {
+  background-color: #ffffff;
 }
 
 .slider-list {
@@ -570,11 +581,19 @@ input[type='radio'].visually-hidden {
 
 .slider-item {
   position: relative;
+  z-index: 1;
   padding-top: 321px;
-  opacity: 1;
+  opacity: 0;
   display: none;
 
-  transition: opacity 0.3s ease;
+  transition: opacity 1s ease;
+}
+
+.slider-active {
+  display: block;
+  opacity: 1;
+  z-index: 2;
+  transition: opacity 1s ease;
 }
 
 .slider-item img {
@@ -608,10 +627,9 @@ input[type='radio'].visually-hidden {
   line-height: 44px;
 }
 
-#product-1:checked ~ .slider-list .slide-1,
-#product-2:checked ~ .slider-list .slide-2,
-#product-3:checked ~ .slider-list .slide-3 {
+.slide-active {
   display: block;
+  opacity: 1;
 }
 /*special offers*/
 .special-offer {

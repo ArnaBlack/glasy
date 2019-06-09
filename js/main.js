@@ -20,3 +20,37 @@
 			});
 		map.geoObjects.add(placemark);
     };
+
+    //slider
+    var slideIndex = 0;
+    var slideButtonIndex = 0;
+    var mainPage = document.querySelector('.main-page');
+    var slideButton = document.querySelectorAll('.btn-slide');
+    var slides = document.querySelectorAll('.slider-item');
+    console.log(slides);
+
+    function currentSlide(n) {
+      slides[slideIndex].classList.remove('slider-active');
+      slideButton[slideButtonIndex].classList.remove('btn-slide-active');
+
+      slideIndex = n;
+      slideButtonIndex = n;
+      slides[n].classList.add('slider-active');
+      slideButton[n].classList.add('btn-slide-active');
+      console.log(slides);
+
+      switch(n) {
+        case 0:
+            mainPage.style.backgroundColor = '#849d8f';
+            break;
+        case 1:
+            mainPage.style.backgroundColor = '#8996a6';
+            break;
+        case 2:
+            mainPage.style.backgroundColor = '#9d8b84';
+            break;
+      }
+    }
+
+
+
