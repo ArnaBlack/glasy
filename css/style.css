@@ -534,6 +534,7 @@ input[type='radio'].visually-hidden {
 
 .slider {
   position: relative;
+  z-index: 1;
 }
 
 .slider-controls {
@@ -541,7 +542,6 @@ input[type='radio'].visually-hidden {
   bottom: 63px;
   left: 0;
   z-index: 20;
-
   font-size: 0;
 }
 
@@ -646,6 +646,7 @@ input[type='radio'].visually-hidden {
 
   font-size: 32px;
   line-height: 44px;
+  opacity: 1;
 }
 
 /*special offers*/
