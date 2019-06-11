@@ -78,33 +78,29 @@
           <button class="btn-slide" onclick="currentSlide(1)">Второй</button>
           <button class="btn-slide" onclick="currentSlide(2)">Третий</button>
       </div>
-      <ul class="slider-list">
-          <li class="slider-item slider-active">
-            <img src="img/content-img/slide-1.png" width="1045" height="881" alt="Крем-брюле и пломбир с малиновым джемом">
-            <div class="wrap">
+      <ul class="slider-list-img">
+        <li class="slide-img slide-img-active"><img src="img/content-img/slide-1.png" width="1045" height="881" alt="Крем-брюле и пломбир с малиновым джемом"></li>
+        <li class="slide-img"><img src="img/content-img/slide-2.png" width="1045" height="881" alt="Шоколадный пломбир и лимонный сорбет"></li>
+        <li class="slide-img"><img src="img/content-img/slide-3.png" width="1045" height="881" alt="Пломбир с помадкой и клубничный щербет"></li>
+      </ul>
+      <ul class="slider-list-captions">
+          <li class="slider-caption slide-active">
               <h3 class="slide-title">
                 Крем-брюле и пломбир с малиновым джемом
               </h3>
               <a class="btn slide-btn" href="#">Давайте оба!</a>
-            </div>
           </li>
-          <li class="slider-item">
-              <img src="img/content-img/slide-2.png" width="1045" height="881" alt="Шоколадный пломбир и лимонный сорбет">
-            <div class="wrap">
+          <li class="slider-caption">
               <h3 class="slide-title">
                 Шоколадный пломбир и лимонный сорбет
               </h3>
               <a class="btn slide-btn" href="#">Давайте оба!</a>
-            </div>
           </li>
-          <li class="slider-item">
-              <img src="img/content-img/slide-3.png" width="1045" height="881" alt="Пломбир с помадкой и клубничный щербет">
-            <div class="wrap">
+          <li class="slider-caption">
               <h3 class="slide-title">
                 Пломбир с помадкой и клубничный щербет
               </h3>
               <a class="btn slide-btn" href="#">Давайте оба!</a>
-            </div>
           </li>
         </ul>
 
@@ -144,7 +140,6 @@
            <a class="btn btn-hidden" href="#">Быстрый просмотр</a>
           </div>
         </li>
-
         <li class="catalog-item">
           <!-- при клике на ссылку открыается карточка товара-->
           <a class="product-wrap" href="catalog.html">
@@ -210,7 +205,7 @@
         <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
         <form class="subscribe-form" action="#" method="post">
           <label class="visually-hidden" for="user-email">Электронная почта</label>
-          <input class="input input-email" id="user-email" type="email" name="user-email" placeholder="Электронная почта">
+          <input class="input input-email" id="user-email" type="email" name="user-email" placeholder="Электронная почта" required>
           <button class="btn" type="submit">Отправить</button>
         </form>
       </div>
@@ -231,7 +226,7 @@
         <p>Адрес главного офиса и офлайн-магазина:</p>
         <p class="contacts-adress">ул. Большая Конюшенная 19/8, Санкт-Петербург</p>
         <p>Для заказов по телефону:<a class="contacts-phone" href="tel:+78124502525">8 812 450-25-25</a> (с 10 до 20 ежедневно)</p>
-        <a class="btn btn-feedback" href="#">Форма обратной связи</a>
+        <a class="btn btn-feedback" href="feedback.html">Форма обратной связи</a>
       </div>
     </div>
   </section>

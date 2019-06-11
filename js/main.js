@@ -22,21 +22,28 @@
     };
 
     //slider
-    var slideIndex = 0;
+    var slideCaptionIndex = 0;
+    var slideImgIndex = 0;
     var slideButtonIndex = 0;
     var mainPage = document.querySelector('.main-page');
-    var slideButton = document.querySelectorAll('.btn-slide');
-    var slides = document.querySelectorAll('.slider-item');
-
+    var slideButton = mainPage.querySelectorAll('.btn-slide');
+    var slidesCaption = mainPage.querySelectorAll('.slider-caption');
+    var slidesImg = mainPage.querySelectorAll('.slide-img');
+//функция смены слайдов
     function currentSlide(n) {
-      slides[slideIndex].classList.remove('slider-active');
+      //удаляем класс видимости у предыдущего
+      slidesImg[slideImgIndex].classList.remove('slide-img-active');
+      slidesCaption[slideCaptionIndex].classList.remove('slide-active');
       slideButton[slideButtonIndex].classList.remove('btn-slide-active');
-
-      slideIndex = n;
+      //запоминаем новый для следующего раза
+      slideCaptionIndex = n;
+      slideImgIndex = n;
       slideButtonIndex = n;
-      slides[n].classList.add('slider-active');
+      //показываем новый
+      slidesImg[n].classList.add('slide-img-active');
+      slidesCaption[n].classList.add('slide-active');
       slideButton[n].classList.add('btn-slide-active');
-
+//прописываем в разметке цвет фона у body
       switch(n) {
         case 0:
             mainPage.style.backgroundColor = '#849d8f';
@@ -50,7 +57,7 @@
       }
     }
 
-//popup
+//popup feedback
 var overlay = document.querySelector('.overlay');
 var btnFeedback = document.querySelector('.btn-feedback');
 var popup = document.querySelector('.modal-feedback');
@@ -59,23 +66,34 @@ var feedbackName = popup.querySelector('[name=fedback-name]');
 var feedbackEmail = popup.querySelector('[name=fedback-email]');
 var feedbackText = popup.querySelector('[name=message]');
 var form = popup.querySelector('.feedback-form');
-
+//показываем при клике на кнопку в секции
 btnFeedback.addEventListener('click', function(evt) {
   evt.preventDefault();
   popup.classList.add('modal-feedback-show');
   overlay.classList.add('overlay-show');
   feedbackName.focus();
 });
-
+//скрываем при клике на кнопку  'закрыть' в форме
 close.addEventListener('click', function(evt) {
   evt.preventDefault();
   popup.classList.remove('modal-feedback-show');
   overlay.classList.remove('overlay-show');
+  popup.classList.remove('modal-feedback-error');
 });
-
+//проверяем наличие пустых полей
 form.addEventListener('submit', function(evt) {
   evt.preventDefault();
   if (!feedbackName.value || !feedbackEmail.value || !feedbackText.value) {
+    popup.classList.remove('modal-feedback-error');
+    popup.offsetWidth = popup.offsetWidth;
     popup.classList.add('modal-feedback-error');
+  }
+});
+
+window.addEventListener('keydown', function(evt) {
+  if (evt.keyCode === 27) {
+    popup.classList.remove('modal-feedback-show');
+    overlay.classList.remove('overlay-show');
+    popup.classList.remove('modal-feedback-error');
   }
 });
