@@ -11,7 +11,7 @@
   <link rel="shortcut icon" href="img/service-img/favicon.ico" type="image/x-icon">
 </head>
 <body class="main-page">
-    <header class="main-header container">
+  <header class="main-header container">
             <nav class="main-navigation">
               <a class="main-header-logo">
                 <img src="img/service-img/Logo.svg" width="154" height="64" alt="Логотип магазина Глейси">
@@ -48,11 +48,11 @@
                       <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
                         <p>
                           <label class="visually-hidden" for="user-login">Электронная почта</label>
-                          <input class="input input-login" id="user-login" type="email" name="login" placeholder="Электронная почта">
+                          <input class="input input-login" id="user-login" type="email" name="login" placeholder="Электронная почта" required>
                         </p>
                         <p>
                           <label class="visually-hidden" for="user-password">Пароль</label>
-                          <input class="input input-password" id="user-password" type="password" name="password" placeholder="Пароль">
+                          <input class="input input-password" id="user-password" type="password" name="password" placeholder="Пароль" required>
                         </p>
                         <button class="btn">Войти</button>
                         <p>
@@ -67,7 +67,7 @@
                   </div>
             </div>
           <p class="header-contacts">С 10 до 20, ежедневно<a class="header-phone" href="tel:+78124502525">8 812 450-25-25</a></p>
-    </header>
+  </header>
  <main>
    <div class="container">
     <!--promo-->
@@ -287,14 +287,13 @@
       <span>Сделано в HTML Academy &copy; 2019</span>
     </p>
  </footer>
-
  <section class="modal modal-feedback">
   <h2 class="visually-hidden">обратная связь</h2>
   <b>Мы обязательно вам ответим!</b>
-  <form class="feedback-form" action="#" method="post">
+  <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
     <p>
       <label class="visually-hidden" for="user-name">имя</label>
-      <input class="input feedback-input" type="text" name="name" id="user-name" placeholder="Как вас зовут?">
+      <input class="input feedback-input" type="text" name="fedback-name" id="user-name" placeholder="Как вас зовут?">
     </p>
     <p>
       <label class="visually-hidden" for="feddback-email">почта</label>

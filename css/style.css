@@ -23,6 +23,7 @@ body {
   min-width: 1200px;
   margin: 0 auto;
 
+
   font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -156,8 +157,10 @@ input[type='radio'].visually-hidden {
 .main-header {
   display: flex;
   justify-content: space-between;
-
   flex-wrap: wrap;
+
+  position: relative;
+  z-index: 2;
 }
 
 .main-navigation {
@@ -1111,23 +1114,80 @@ input[type='radio'].visually-hidden {
 }
 
 /*feedback modal*/
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+}
 
 .modal-feedback {
+  width: 478px;
+  padding: 20px 26px 27px ;
+  margin: auto;
+
+  display: none;
   position: fixed;
   z-index: 1000;
   top: 120px;
-  left: 50%;
-
-  display: none;
-  width: 478px;
-  padding: 20px 26px 27px ;
+  left: 0;
 
   opacity: 1;
 
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
 
+.modal-feedback-show {
+  visibility: visible;
+  display: block;
+}
+
+.modal-feedback-error {
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
+}
 .feedback-input {
   width: 267px;
 }
@@ -1200,13 +1260,14 @@ input[type='radio'].visually-hidden {
 
   background-color: rgba(0, 0, 0, .3);
 }
-
+.overlay-show {
+  display: block;
+}
 /*footer*/
 .page-footer {
   display: flex;
   padding: 36px 0;
 
-  align-items: bottom;
 }
 
 .inner-page .page-footer {
@@ -1812,4 +1873,54 @@ input[type='radio'].visually-hidden {
   color: #000000;
 
   background-color: #ffffff;
+}
+
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
 }

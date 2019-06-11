@@ -27,7 +27,6 @@
     var mainPage = document.querySelector('.main-page');
     var slideButton = document.querySelectorAll('.btn-slide');
     var slides = document.querySelectorAll('.slider-item');
-    console.log(slides);
 
     function currentSlide(n) {
       slides[slideIndex].classList.remove('slider-active');
@@ -37,7 +36,6 @@
       slideButtonIndex = n;
       slides[n].classList.add('slider-active');
       slideButton[n].classList.add('btn-slide-active');
-      console.log(slides);
 
       switch(n) {
         case 0:
@@ -52,5 +50,32 @@
       }
     }
 
+//popup
+var overlay = document.querySelector('.overlay');
+var btnFeedback = document.querySelector('.btn-feedback');
+var popup = document.querySelector('.modal-feedback');
+var close = popup.querySelector('.modal-close');
+var feedbackName = popup.querySelector('[name=fedback-name]');
+var feedbackEmail = popup.querySelector('[name=fedback-email]');
+var feedbackText = popup.querySelector('[name=message]');
+var form = popup.querySelector('.feedback-form');
 
+btnFeedback.addEventListener('click', function(evt) {
+  evt.preventDefault();
+  popup.classList.add('modal-feedback-show');
+  overlay.classList.add('overlay-show');
+  feedbackName.focus();
+});
 
+close.addEventListener('click', function(evt) {
+  evt.preventDefault();
+  popup.classList.remove('modal-feedback-show');
+  overlay.classList.remove('overlay-show');
+});
+
+form.addEventListener('submit', function(evt) {
+  evt.preventDefault();
+  if (!feedbackName.value || !feedbackEmail.value || !feedbackText.value) {
+    popup.classList.add('modal-feedback-error');
+  }
+});
