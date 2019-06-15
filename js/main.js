@@ -58,6 +58,7 @@
     }
 
 //popup feedback
+var body = document.querySelector('body');
 var overlay = document.querySelector('.overlay');
 var btnFeedback = document.querySelector('.btn-feedback');
 var popup = document.querySelector('.modal-feedback');
@@ -66,19 +67,53 @@ var feedbackName = popup.querySelector('[name=fedback-name]');
 var feedbackEmail = popup.querySelector('[name=fedback-email]');
 var feedbackText = popup.querySelector('[name=message]');
 var form = popup.querySelector('.feedback-form');
-//показываем при клике на кнопку в секции
-btnFeedback.addEventListener('click', function(evt) {
-  evt.preventDefault();
+
+// отлавливаем событие при клике на esc
+var onPopupEscPress = function(evt) {
+  if (evt.keyCode === 27) {
+    popupClose();
+  }
+}
+//отласливаем событие клика на подложку
+var onOverlayClick = function() {
+  popupClose();
+}
+//функция открытия окна
+var popupOpen = function() {
   popup.classList.add('modal-feedback-show');
   overlay.classList.add('overlay-show');
+  body.style.overflow = 'hidden';
+  document.addEventListener('keydown', onPopupEscPress);
+  overlay.addEventListener('click', onOverlayClick);
   feedbackName.focus();
+}
+//функция закрытия окна
+var popupClose = function() {
+  popup.classList.remove('modal-feedback-show');
+  overlay.classList.remove('overlay-show');
+  popup.classList.remove('modal-feedback-error');
+  body.style.overflow = 'auto';
+  document.removeEventListener('keydown', onPopupEscPress);
+  overlay.removeEventListener('click', onOverlayClick);
+}
+
+//слушаем событие клика на кнопку
+btnFeedback.addEventListener('click', function(evt) {
+  evt.preventDefault();
+  popupOpen();
+});
+
+btnFeedback.addEventListener('keydown', function(evt) {
+  if (evt.keyCode === 13) {
+    evt.preventDefault();
+    popupOpen();
+};
 });
 //скрываем при клике на кнопку  'закрыть' в форме
 close.addEventListener('click', function(evt) {
   evt.preventDefault();
-  popup.classList.remove('modal-feedback-show');
-  overlay.classList.remove('overlay-show');
-  popup.classList.remove('modal-feedback-error');
+  popupClose();
+
 });
 //проверяем наличие пустых полей
 form.addEventListener('submit', function(evt) {
@@ -90,10 +125,4 @@ form.addEventListener('submit', function(evt) {
   }
 });
 
-window.addEventListener('keydown', function(evt) {
-  if (evt.keyCode === 27) {
-    popup.classList.remove('modal-feedback-show');
-    overlay.classList.remove('overlay-show');
-    popup.classList.remove('modal-feedback-error');
-  }
-});
+
