@@ -22,40 +22,69 @@
     };
 
     //slider
-    var slideCaptionIndex = 0;
-    var slideImgIndex = 0;
-    var slideButtonIndex = 0;
+    var index = 0;
     var mainPage = document.querySelector('.main-page');
     var slideButton = mainPage.querySelectorAll('.btn-slide');
     var slidesCaption = mainPage.querySelectorAll('.slider-caption');
     var slidesImg = mainPage.querySelectorAll('.slide-img');
 //функция смены слайдов
-    function currentSlide(n) {
+
+var removePrevSlide = function(index) {
+  slidesImg[index].classList.remove('slide-img-active');
+  slidesCaption[index].classList.remove('slide-active');
+  slideButton[index].classList.remove('btn-slide-active');
+};
+var showNextSlide = function(index) {
+  slidesImg[index].classList.add('slide-img-active');
+  slidesCaption[index].classList.add('slide-active');
+  slideButton[index].classList.add('btn-slide-active');
+};
+var setBackgroundColor = function(index) {
+  if(index === 0) {
+    mainPage.style.backgroundColor = '#849d8f';
+  }
+  if(index === 1) {
+    mainPage.style.backgroundColor = '#8996a6';
+  }
+  if(index === 2) {
+    mainPage.style.backgroundColor = '#9d8b84';
+  }
+}
+var currentSlide = (function () {
+  slideButton.forEach(function(elem, i) {
+    elem.addEventListener('click', function () {
       //удаляем класс видимости у предыдущего
-      slidesImg[slideImgIndex].classList.remove('slide-img-active');
-      slidesCaption[slideCaptionIndex].classList.remove('slide-active');
-      slideButton[slideButtonIndex].classList.remove('btn-slide-active');
+      removePrevSlide(index);
       //запоминаем новый для следующего раза
-      slideCaptionIndex = n;
-      slideImgIndex = n;
-      slideButtonIndex = n;
+      index = i;
       //показываем новый
-      slidesImg[n].classList.add('slide-img-active');
-      slidesCaption[n].classList.add('slide-active');
-      slideButton[n].classList.add('btn-slide-active');
-//прописываем в разметке цвет фона у body
-      switch(n) {
-        case 0:
-            mainPage.style.backgroundColor = '#849d8f';
-            break;
-        case 1:
-            mainPage.style.backgroundColor = '#8996a6';
-            break;
-        case 2:
-            mainPage.style.backgroundColor = '#9d8b84';
-            break;
-      }
-    }
+      showNextSlide(i);
+      //прописываем в разметке цвет фона у body
+      setBackgroundColor(i);
+    });
+  });
+}());
+
+var changeSlide = function() {
+  removePrevSlide(index);
+  index++;
+  if (index < slideButton.length) {
+    //показываем новый
+    showNextSlide(index);
+    //прописываем в разметке цвет фона у body
+    setBackgroundColor(index);
+  }
+  else { //иначе показываем первый
+    index = 0;
+    //показываем новый
+    showNextSlide(index);
+    //прописываем в разметке цвет фона у body
+    setBackgroundColor(index);
+  }
+}
+
+currentSlide;
+setInterval(changeSlide, 5000);
 
 //popup feedback
 var body = document.querySelector('body');

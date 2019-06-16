@@ -564,9 +564,11 @@ input[type='radio'].visually-hidden {
   transition: backdround-color 1s ease;
 }
 
-.btn-slide:hover,
-.btn-slide:focus {
+.btn-slide:hover {
   background-color: rgba(255, 255,255, 0.7);
+}
+.btn-slide:focus {
+  background-color: #ffffff;
 }
 
 .btn-slide-active {
