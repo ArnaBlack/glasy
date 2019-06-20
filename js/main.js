@@ -25,18 +25,15 @@
     var index = 0;
     var mainPage = document.querySelector('.main-page');
     var slideButton = mainPage.querySelectorAll('.btn-slide');
-    var slidesCaption = mainPage.querySelectorAll('.slider-caption');
     var slidesImg = mainPage.querySelectorAll('.slide-img');
 //функция смены слайдов
 
 var removePrevSlide = function(index) {
   slidesImg[index].classList.remove('slide-img-active');
-  slidesCaption[index].classList.remove('slide-active');
   slideButton[index].classList.remove('btn-slide-active');
 };
 var showNextSlide = function(index) {
   slidesImg[index].classList.add('slide-img-active');
-  slidesCaption[index].classList.add('slide-active');
   slideButton[index].classList.add('btn-slide-active');
 };
 var setBackgroundColor = function(index) {
